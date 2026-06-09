@@ -2,6 +2,7 @@ import {
   HiOutlineMail,
   HiOutlinePhone,
   HiOutlineLocationMarker,
+  HiOutlineAcademicCap,
 } from "react-icons/hi";
 import { FaLinkedin, FaGithub, FaHackerrank } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
@@ -13,26 +14,32 @@ import { profile, socials } from "@/data/resume";
 const contactCards = [
   {
     icon: HiOutlineMail,
-    label: "Email",
+    label: "Institutional Email",
+    value: profile.emailInstitutional,
+    href: `mailto:${profile.emailInstitutional}`,
+  },
+  {
+    icon: HiOutlineMail,
+    label: "Personal Email",
     value: profile.email,
     href: `mailto:${profile.email}`,
   },
   {
-    icon: HiOutlineMail,
-    label: "Academic Email",
-    value: profile.email2,
-    href: `mailto:${profile.email2}`,
-  },
-  {
     icon: HiOutlinePhone,
-    label: "Phone",
+    label: "Mobile",
     value: profile.phone,
     href: `tel:${profile.phone.replace(/[^+\d]/g, "")}`,
   },
   {
     icon: HiOutlineLocationMarker,
-    label: "Location",
-    value: profile.location,
+    label: "Current Address",
+    value: profile.address,
+    href: undefined,
+  },
+  {
+    icon: HiOutlineAcademicCap,
+    label: "Institution",
+    value: profile.institution,
     href: undefined,
   },
 ];

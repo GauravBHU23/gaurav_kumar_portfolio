@@ -22,6 +22,7 @@ const quickLinks = [
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   { href: "#education", label: "Education" },
+  { href: "#achievements", label: "Awards" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -34,7 +35,7 @@ const socialLinks = [
 
 const contactItems = [
   { icon: HiOutlineMail, value: profile.email, href: `mailto:${profile.email}` },
-  { icon: HiOutlineMail, value: profile.email2, href: `mailto:${profile.email2}` },
+  { icon: HiOutlineMail, value: profile.emailInstitutional, href: `mailto:${profile.emailInstitutional}` },
   {
     icon: HiOutlinePhone,
     value: profile.phone,

@@ -22,8 +22,15 @@ import {
   SiGeeksforgeeks,
   SiLeetcode,
   SiEthereum,
+  SiCodechef,
 } from "react-icons/si";
-import { FaJava, FaDatabase, FaCode, FaMapMarkedAlt } from "react-icons/fa";
+import {
+  FaJava,
+  FaDatabase,
+  FaCode,
+  FaMapMarkedAlt,
+  FaServer,
+} from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
 
 /* ------------------------------------------------------------------ */
@@ -42,22 +49,24 @@ export const profile = {
     "Problem Solver",
   ],
   location: "Varanasi, Uttar Pradesh, India",
-  email: "gauravkum1275@gmail.com",
-  email2: "gauravkumar2580@bhu.ac.in",
+  email: "Gauravkum1275@gmail.com",
+  emailInstitutional: "Gaurav.saf.civ26@itbhu.ac.in",
   phone: "+91-8709393673",
+  address: "Sir Goverdhanpur, Near Sir Gate-BHU, Varanasi, UP 221005",
+  institution: "Indian Institute of Technology (BHU), Varanasi",
   photo: "/Gaurav_icon.png",
   resumeUrl: "/Gaurav_MCA_2026_Resume.pdf",
   summary:
-    "MCA graduate from Banaras Hindu University and Project Assistant at IIT (BHU), Varanasi. I build full-stack web applications with Next.js, FastAPI, and Docker, work on blockchain DApps, and analyze large-scale geospatial data. I love optimizing systems, building predictive models, and solving hard problems with clean code.",
+    "I'm Gaurav Kumar, an MCA graduate from Banaras Hindu University and currently a Project Assistant at the Civil Engineering Department, IIT (BHU), Varanasi — where I work on the SLCR Decision Support System. I build full-stack web applications with Next.js, FastAPI, Django and Docker, develop blockchain DApps on Ethereum, and analyze large-scale geospatial data using GIS tools and GeoServer. With 1000+ DSA problems solved across Coding Ninjas, LeetCode, HackerRank, GeeksforGeeks and CodeChef, I love turning complex problems into clean, scalable, and efficient solutions.",
   tagline:
-    "I build full-stack apps, blockchain DApps & data-driven systems that ship fast.",
+    "I Build Full-Stack Applications, Blockchain DApps & Data-driven Systems that Ship Fast.",
 };
 
 export const socials = {
-  linkedin: "https://www.linkedin.com/",
-  github: "https://github.com/",
-  hackerrank: "https://www.hackerrank.com/",
-  leetcode: "https://leetcode.com/",
+  linkedin: "https://www.linkedin.com/in/gaurav-kumar-104264296",
+  github: "https://github.com/GauravBHU23",
+  hackerrank: "https://www.hackerrank.com/profile/gauravkum1275",
+  leetcode: "https://leetcode.com/u/gauravkum1275/",
 };
 
 /* ------------------------------------------------------------------ */
@@ -150,7 +159,7 @@ export const projects: Project[] = [
       "Engineered a decentralized application (DApp) on the Ethereum network, reducing transaction latency by 12% through optimized Smart Contract logic.",
       "Implemented secure wallet authentication for 100% tamper-proof voter verification using Web3.js and MetaMask integration.",
     ],
-    link: "#",
+    link: "https://github.com/GauravBHU23/BlockChain-Voting-System-Project",
   },
   {
     title: "Employee Management Portal",
@@ -160,7 +169,7 @@ export const projects: Project[] = [
       "Developed a multi-tier dashboard with Next.js and FastAPI managing 500+ employee records with sub-200ms API response times.",
       "Deployed containerized microservices using Docker, reducing local setup and deployment time by 60%.",
     ],
-    link: "#",
+    link: "https://github.com/GauravBHU23/Employee-Management-System-2",
   },
   {
     title: "Geospatial Analysis & Mapping",
@@ -208,6 +217,7 @@ export const frameworks: Skill[] = [
 export const dataGis: Skill[] = [
   { name: "Google Earth Engine", icon: SiGooglemaps, color: "#34A853" },
   { name: "ArcMap GIS", icon: FaMapMarkedAlt, color: "#2C7FB8" },
+  { name: "GeoServer", icon: FaServer, color: "#5C9CCC" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
   { name: "Ethereum", icon: SiEthereum, color: "#7B7BEE" },
@@ -262,8 +272,8 @@ export const platforms: Platform[] = [
     link: socials.hackerrank,
   },
   {
-    name: "LeetCode + GFG",
-    stat: "300+ Combined DSA Problems",
+    name: "LeetCode",
+    stat: "300+ DSA Problems Solved",
     icon: SiLeetcode,
     color: "#FFA116",
     link: socials.leetcode,
@@ -273,7 +283,14 @@ export const platforms: Platform[] = [
     stat: "Active Problem Solver",
     icon: SiGeeksforgeeks,
     color: "#2F8D46",
-    link: "#",
+    link: "https://www.geeksforgeeks.org/profile/gauravktir1",
+  },
+  {
+    name: "CodeChef",
+    stat: "Active Competitive Coder",
+    icon: SiCodechef,
+    color: "#A98261",
+    link: "https://www.codechef.com/users/gauravkum1275",
   },
 ];
 
@@ -287,8 +304,98 @@ export interface Certification {
 }
 
 export const certifications: Certification[] = [
+  {
+    title: "The Joy of Computing Using Python (Elite)",
+    issuer: "NPTEL · IIT Madras",
+  },
+  {
+    title: "SAWIT.AI Learnathon — Generative AI",
+    issuer: "GUVI · HCLTech · Google for Developers",
+  },
+  {
+    title: "Machine Learning for All",
+    issuer: "University of London · Coursera",
+  },
+  {
+    title: "Responsive Web Development (HTML5, CSS3, JS)",
+    issuer: "Infosys Springboard",
+  },
+  {
+    title: "My APPSSDC, My Website — Web Design",
+    issuer: "GUVI · APSSDC",
+  },
   { title: "OOPs in Java", issuer: "Coding Ninjas" },
-  { title: "Responsive Web Development", issuer: "Infosys" },
   { title: "Python & SQL", issuer: "HackerRank" },
   { title: "DSA Certificate", issuer: "Data Flair" },
+  {
+    title: "Tata Crucible Corporate Quiz 2025 (Participation)",
+    issuer: "Tata Group · Unstop",
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Achievements / Awards                                               */
+/* ------------------------------------------------------------------ */
+
+export interface Achievement {
+  title: string;
+  detail: string;
+  highlight?: boolean;
+}
+
+export const achievements: Achievement[] = [
+  {
+    title: "Naukri Campus Young Turks",
+    detail:
+      "Scored 98.47 percentile in India's largest skill contest (Certificate of Merit).",
+    highlight: true,
+  },
+  {
+    title: "Top 1% on Coding Ninjas",
+    detail: "Ranked in the top 1% of global users with 1000+ problems solved.",
+  },
+  {
+    title: "Gold Badges on HackerRank",
+    detail: "Earned Gold badges in Python, C++ and SQL (200+ challenges).",
+  },
+  {
+    title: "300+ DSA Problems",
+    detail:
+      "Active competitive coder across LeetCode, GeeksforGeeks and CodeChef.",
+  },
+];
+
+/* ------------------------------------------------------------------ */
+/* Testimonials                                                        */
+/* ------------------------------------------------------------------ */
+
+export interface Testimonial {
+  quote: string;
+  name: string;
+  role: string;
+  image?: string;
+}
+
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Gaurav is a quick learner and a dependable problem solver. He optimized our data pipelines significantly and brought a strong analytical mindset to the SLCR project.",
+    name: "Dr. Akash Tiwari",
+    role: "Research Associate · Civil Engineering Dept, IIT (BHU)",
+    image: "/profile.webp",
+  },
+  {
+    quote:
+      "One of the most consistent and motivated students I've mentored. His command over DSA and full-stack development is impressive, and he delivers clean, well-structured code.",
+    name: "Dr. Gaurav Barnwal",
+    role: "Faculty Mentor · Dept. of Computer Science, BHU",
+    image: "/FA000237.jpeg",
+  },
+  {
+    quote:
+      "Collaborating with Gaurav on our Blockchain Voting DApp was great — he's detail-oriented, takes ownership, and is always willing to help the team debug tough issues.",
+    name: "Sudhanshu, Muskan & Aarish",
+    role: "Project Teammates · Blockchain Voting DApp",
+    image: "/Gaurav_icon.png",
+  },
 ];

@@ -23,6 +23,7 @@ const socialLinks = [
 ];
 
 const stats = [
+  { value: "98.47%ile", label: "Naukri Young Turks" },
   { value: "1000+", label: "Problems Solved" },
   { value: "3+", label: "Major Projects" },
   { value: "MCA", label: "BHU, Varanasi" },
@@ -57,8 +58,13 @@ export default function Hero() {
           <p className="mb-3 font-medium text-brand-500 dark:text-brand-300">
             👋 Hi, I&apos;m
           </p>
-          <h1 className="text-4xl font-extrabold leading-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
-            {profile.name}
+          <h1 className="text-4xl font-extrabold leading-tight sm:text-5xl lg:text-6xl">
+            <span className="text-slate-900 dark:text-white">
+              {profile.name.split(" ")[0]}
+            </span>{" "}
+            <span className="gradient-text">
+              {profile.name.split(" ").slice(1).join(" ")}
+            </span>
           </h1>
           <h2 className="mt-3 flex min-h-[2.2rem] items-center text-xl font-semibold text-slate-700 dark:text-slate-300 sm:text-2xl">
             <span className="mr-2">I&apos;m a</span>
@@ -101,7 +107,7 @@ export default function Hero() {
           </div>
 
           {/* Quick stats */}
-          <div className="mt-10 grid max-w-md grid-cols-3 gap-4">
+          <div className="mt-10 grid max-w-lg grid-cols-2 gap-4 sm:grid-cols-4">
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}
@@ -110,7 +116,7 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.5 + i * 0.12 }}
                 className="glass rounded-xl px-3 py-3 text-center"
               >
-                <p className="text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">
+                <p className="text-base font-bold text-slate-900 dark:text-white sm:text-lg lg:text-xl">
                   {s.value}
                 </p>
                 <p className="mt-0.5 text-[11px] leading-tight text-slate-600 dark:text-slate-400">

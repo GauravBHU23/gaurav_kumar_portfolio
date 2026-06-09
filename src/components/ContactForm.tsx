@@ -12,6 +12,7 @@ export default function ContactForm() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
     website: "", // honeypot
   });
@@ -47,7 +48,7 @@ export default function ContactForm() {
       }
 
       setStatus("success");
-      setForm({ name: "", email: "", message: "", website: "" });
+      setForm({ name: "", email: "", subject: "", message: "", website: "" });
     } catch (err) {
       setStatus("error");
       setErrorMsg(err instanceof Error ? err.message : "Something went wrong.");
@@ -141,6 +142,15 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="card space-y-4" noValidate>
+      <div className="mb-2">
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+          Send a Message
+        </h3>
+        <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+          Fill out the form and I&apos;ll get back to you shortly.
+        </p>
+      </div>
+
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
           <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -172,6 +182,22 @@ export default function ContactForm() {
             disabled={status === "loading"}
           />
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="subject" className="mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300">
+          Subject
+        </label>
+        <input
+          id="subject"
+          type="text"
+          required
+          value={form.subject}
+          onChange={update("subject")}
+          placeholder="Research Collaboration / Job Opportunity / Query"
+          className={inputClass}
+          disabled={status === "loading"}
+        />
       </div>
 
       <div>

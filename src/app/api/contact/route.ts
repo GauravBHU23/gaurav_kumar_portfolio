@@ -17,6 +17,7 @@ export async function POST(req: NextRequest) {
 
     const name = String(body.name ?? "").trim();
     const email = String(body.email ?? "").trim();
+    const subject = String(body.subject ?? "").trim();
     const message = String(body.message ?? "").trim();
     // Honeypot field — bots fill it, humans don't.
     const website = String(body.website ?? "").trim();
@@ -26,9 +27,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true });
     }
 
-    if (!name || !email || !message) {
+    if (!name || !email || !subject || !message) {
       return NextResponse.json(
-        { error: "Name, email and message are all required." },
+        { error: "Name, email, subject and message are all required." },
         { status: 400 }
       );
     }
@@ -68,9 +69,9 @@ export async function POST(req: NextRequest) {
       from: `"Gaurav Kumar" <${user}>`,
       to,
       replyTo: `"${name}" <${email}>`,
-      subject: `📩 New message from ${name}`,
-      text: `New portfolio contact message\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-      html: buildEmailHtml(name, email, message),
+      subject: `📩 ${subject} — from ${name}`,
+      text: `New portfolio contact message\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\n\nMessage:\n${message}`,
+      html: buildEmailHtml(name, email, subject, message),
     });
 
     return NextResponse.json({ ok: true });
@@ -96,9 +97,15 @@ function escapeHtml(str: string) {
  * Responsive, email-client-safe HTML template (table + inline styles).
  * Renders cleanly on desktop and mobile (Gmail, Outlook, Apple Mail, etc.).
  */
-function buildEmailHtml(name: string, email: string, message: string) {
+function buildEmailHtml(
+  name: string,
+  email: string,
+  subject: string,
+  message: string
+) {
   const safeName = escapeHtml(name);
   const safeEmail = escapeHtml(email);
+  const safeSubject = escapeHtml(subject);
   const safeMessage = escapeHtml(message).replace(/\n/g, "<br/>");
   const initial = escapeHtml((name.trim()[0] || "?").toUpperCase());
 
@@ -156,6 +163,18 @@ function buildEmailHtml(name: string, email: string, message: string) {
                   </td>
                 </tr>
               </table>
+            </td>
+          </tr>
+
+          <!-- Subject -->
+          <tr>
+            <td style="padding:12px 28px 0 28px;">
+              <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:#64748b;margin-bottom:6px;">
+                Subject
+              </div>
+              <div style="font-size:15px;font-weight:600;color:#0f172a;">
+                ${safeSubject}
+              </div>
             </td>
           </tr>
 
